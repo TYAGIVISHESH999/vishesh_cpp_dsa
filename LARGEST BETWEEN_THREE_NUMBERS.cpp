@@ -6,11 +6,11 @@ int main() {
     cin>>a;
     cin>>b;
     cin>>c;
-    if((a>b)&&(a>c)){
+    if((a>=b)&&(a>=c)){
         cout<<"largest number is ";
         cout<<a;
     }
-    else if((b>a)&&(b>c)){
+    else if((b>=a)&&(b>=c)){
         cout<<"largest number is ";
         cout<<b;
     }
