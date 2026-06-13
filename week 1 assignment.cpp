@@ -146,5 +146,67 @@ int main() {
 
     return 0;
 }
+//Mini Project:
+//ATM Menu Program (Balance Check, Deposit, Withdraw).
+// code -->
+#include <iostream>
+using namespace std;
+
+int main() {
+    double balance = 1000.0; // Initial balance
+    int choice;
+    double amount;
+
+    while (true) {
+        cout << "\n========== ATM MENU ==========\n";
+        cout << "1. Check Balance\n";
+        cout << "2. Deposit Money\n";
+        cout << "3. Withdraw Money\n";
+        cout << "4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        if (choice == 1) {
+            cout << "Current Balance: Rs. " << balance << endl;
+        }
+        else if (choice == 2) {
+            cout << "Enter amount to deposit: ";
+            cin >> amount;
+
+            if (amount > 0) {
+                balance = balance + amount;
+                cout << "Deposit Successful!" << endl;
+                cout << "Updated Balance: Rs. " << balance << endl;
+            } else {
+                cout << "Invalid deposit amount!" << endl;
+            }
+        }
+        else if (choice == 3) {
+            cout << "Enter amount to withdraw: ";
+            cin >> amount;
+
+            if (amount <= 0) {
+                cout << "Invalid withdrawal amount!" << endl;
+            }
+            else if (amount > balance) {
+                cout << "Insufficient Balance!" << endl;
+            }
+            else {
+                balance = balance - amount;
+                cout << "Withdrawal Successful!" << endl;
+                cout << "Remaining Balance: Rs. " << balance << endl;
+            }
+        }
+        else if (choice == 4) {
+            cout << "Thank you for using the ATM!" << endl;
+            break;
+        }
+        else {
+            cout << "Invalid choice! Please enter a number between 1 and 4." << endl;
+        }
+    }
+
+    return 0;
+}
 
 
